@@ -589,23 +589,23 @@ export default function StudyCommandSystem() {
                 
                 <h3 className="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-10 relative z-10">System Velocity (7-Day Yield)</h3>
                 
-                <div className="h-80 relative z-10">
-                   <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={graphData.reverse()}>
-                        <defs>
-                          <linearGradient id="colorPoms" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#818cf8" stopOpacity={0.6}/>
-                            <stop offset="95%" stopColor="#818cf8" stopOpacity={0}/>
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff10" />
-                        <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 'bold' }} dy={10} />
-                        <YAxis hide domain={[0, 'dataMax + 20']} />
-                        <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '24px', color: '#fff', fontWeight: 'bold', padding: '16px' }} itemStyle={{ color: '#818cf8' }} />
-                        <Area type="monotone" dataKey="deepWork" stroke="#818cf8" strokeWidth={6} fill="url(#colorPoms)" animationDuration={2000} />
-                      </AreaChart>
-                   </ResponsiveContainer>
-                </div>
+          <div className="w-full h-[260px] min-w-0">
+  <ResponsiveContainer width="100%" height="100%">
+    <AreaChart data={[...graphData].reverse()}>
+      <defs>
+        <linearGradient id="colorPoms" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#818cf8" stopOpacity={0.6}/>
+          <stop offset="95%" stopColor="#818cf8" stopOpacity={0}/>
+        </linearGradient>
+      </defs>
+      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ffffff10" />
+      <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 'bold' }} dy={10} />
+      <YAxis hide domain={[0, 'dataMax + 20']} />
+      <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '24px', color: '#fff', fontWeight: 'bold', padding: '16px' }} itemStyle={{ color: '#818cf8' }} />
+      <Area type="monotone" dataKey="deepWork" stroke="#818cf8" strokeWidth={6} fill="url(#colorPoms)" animationDuration={2000} />
+    </AreaChart>
+  </ResponsiveContainer>
+</div>
 
                 <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
                   <div className="bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-md">
