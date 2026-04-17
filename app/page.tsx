@@ -977,7 +977,7 @@ function CardStat({ label, value, unit, diff, color, bg }: { label: string; valu
     <div className="bg-white p-7 rounded-[2rem] border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 transition-transform duration-500 ease-out group flex flex-col justify-between">
       <div>
         <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{finalLabel}</span>
-        <div className={`text-5xl font-black ${color || valueColor} mt-3 tracking-tighter`}>{finalValue}<span className="text-xl opacity-50 ml-1">{unit || ''}</span></div>
+        <div className={`text-5xl font-black ${color || "text-slate-900"} mt-3 tracking-tighter`}>{finalValue}<span className="text-xl opacity-50 ml-1">{unit || ''}</span></div>
       </div>
       {diff !== undefined ? (
         <div className={`text-[10px] font-bold mt-4 px-3 py-1.5 rounded-lg w-fit inline-flex items-center gap-1.5 ${bg} ${finalDiff >= 0 ? "text-emerald-600" : "text-rose-600"}`}>
